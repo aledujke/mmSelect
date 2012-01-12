@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Example</title>
+		<style type="text/css">
+			.mm_select_wrapper {
+				width: 150px;
+				border: 1px solid black;
+			}
+			.mm_select_wrapper > div:nth-child(odd) {
+				color: #000;
+			}
+			.mm_select_wrapper > div:nth-child(even) {
+				color: #777;
+			}
+			.mm_select_wrapper > div:hover {
+				background-color: #aaa;
+			}
+		</style>
+		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+		<script type="text/javascript" src="mm_select.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#button").mmSelect({ 
+					optionsWrapper: $("#colors"),
+				  onOptionSelected: function() {
+						alert($(this).html());
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="button">Colors</div>
+		<div id="colors">
+			<div>Red</div>
+			<div>Green</div>
+			<div>Blue</div>
+			<div>Yellow</div>
+			<div>Black</div>
+		</div>
+	</body>
+<html>
